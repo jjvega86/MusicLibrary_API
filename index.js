@@ -33,7 +33,7 @@ app.post("/api/products", (req,res) => {
 
 app.put("/api/products", (req, res) => {
     let productToUpdate = req.body;
-    let updatedProduct = repoContext.products.updateProduct(productToUpdate);
+    let updatedProduct = repoContext.products.updateProduct(req.params.id,productToUpdate); // tutorial doesn't have you pass the id in, but the function requires it to update data
     res.send(updatedProduct);
 });
 
