@@ -9,4 +9,15 @@ app.listen(3000, function (){
 app.get("/api/products", (req,res) =>{
     let products = repoContext.products.findAllProducts();
     res.send(products);
+});
+
+app.get("/api/products/:id", (req,res) => {
+    let id = req.params.id;
+    let product = repoContext.products.findProductById(id);
+    res.send(product);
 })
+
+// middleware: middleware functions are functions that have access to the req and res objects in hte application's request-response cycle
+// can terminate HTTP request or pass it on to another middleware using 'next'
+
+
