@@ -33,5 +33,12 @@
     "description": "The Price of Time revolves around a small group of corporate bigwigs who are keeping a major medical breakthrough to themselves.",
     "category": "Paperback Books",
     "price": 17.9
+  },
+  {
+    "id": 6,
+    "name": "East of Eden",
+    "description": "An epic tale of love, betrayal, and Biblical vengeneance set across multiple generation in Salinas, California.",
+    "category": "Books",
+    "price": 12.99
   }
 ]
