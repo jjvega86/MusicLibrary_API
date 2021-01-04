@@ -1,9 +1,13 @@
+var cors = require("cors");
 const repoContext = require("./repository/repository-wrapper");
+const validators = require("./validators/custom-validations");
 const express = require('express'); // import express package into index.js and return a function stored in const 'express'
 const app = express(); // store express function in app - this is industry convention
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.use((req, res, next) => validators.body(req,res,next));
 
 app.listen(3000, function (){
     console.log("Server started. Listening on port 3000.");
