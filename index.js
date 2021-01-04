@@ -5,3 +5,8 @@ const app = express(); // store express function in app - this is industry conve
 app.listen(3000, function (){
     console.log("Server started. Listening on port 3000.");
 });
+
+app.get("/api/products", (req,res) =>{
+    let products = repoContext.products.findAllProducts();
+    res.send(products);
+})
