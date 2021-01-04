@@ -37,4 +37,10 @@ app.put("/api/products", (req, res) => {
     res.send(updatedProduct);
 });
 
+app.delete("/api/products/:id", (req, res) => {
+    let id = req.params.id;
+    let updatedDataSet = repoContext.products.deleteProduct(id);
+    res.send(updatedDataSet);
+})
+
 
