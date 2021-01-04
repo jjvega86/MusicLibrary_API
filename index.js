@@ -31,5 +31,10 @@ app.post("/api/products", (req,res) => {
 
 // IMPORTANT: when making a POST request, don't include primary key information. This is handled automatically on the server side.
 
+app.put("/api/products", (req, res) => {
+    let productToUpdate = req.body;
+    let updatedProduct = repoContext.products.updateProduct(productToUpdate);
+    res.send(updatedProduct);
+});
 
 
